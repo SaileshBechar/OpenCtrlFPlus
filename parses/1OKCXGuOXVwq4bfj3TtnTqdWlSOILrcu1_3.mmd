@@ -1,0 +1,21 @@
+Thus, the syndrome decoder first computes the syndrome of the received noisy codeword $y$, looks up the error position in the table, and then flips the corresponding bit. The noisy codeword $y$ is restored to the original codeword $x$, which can be further decoded back to the original one-bit message if desired.
+
+\subsection{Quantum repetition code}
+
+The above can be applied to protect quantum information from flips of the standard basis states $\{|0\rangle,|1\rangle\}$, which correspond to the action of the Pauli operator $\sigma_{x}$. The state $|0\rangle$ is encoded as $|000\rangle$, while $|1\rangle$ is encoded as $|111\rangle$. A generic single-qubit state $|\psi\rangle=\alpha|0\rangle+\beta|1\rangle$ can then be encoded as $|\widehat{\psi}\rangle=\alpha|000\rangle+\beta|111\rangle$
+
+\subsubsection{Encoding}
+
+Let us check that it is possible to unitarily encode an arbitrary qubit state into this code; it's one thing to say "superpositions are allowed", but it's another to actually have a valid (i.e. unitary) quantum encoder. Although no-cloning prohibits copying an arbitrary state $|\psi\rangle$, we can copy the basis states $|0\rangle$ and $|1\rangle$ with the CNOT gate and an extra ancilla qubit in the $|0\rangle$ state. The CNOT gate has the following action on two qubits: $|x\rangle|y\rangle \mapsto|x\rangle|y \oplus x\rangle$, where $x, y \in\{0,1\}$. The first qubit is the control, and it determines whether the bit value of the second, target, qubit is flipped. In a circuit diagram this is represented by a wire from the control qubit, indicated by a dot, leading to a $\oplus$ symbol on the target. Applying the CNOT gate twice gives the encoder depicted below.
+
+![](https://cdn.mathpix.com/cropped/2023_04_20_395093a98727e78c8a16g-3.jpg?height=202&width=368&top_left_y=1561&top_left_x=798)
+
+It is easy to verify that if the input is $|\psi\rangle=\alpha|0\rangle+\beta|1\rangle$, then the output is $|\widehat{\psi}\rangle=\alpha|000\rangle+\beta|111\rangle$.
+
+\subsubsection{Decoding}
+
+The majority vote decoder, however, cannot be used in the quantum setting. It would require measuring each qubit in the computational basis, which would then destroy the superposition.
+
+Luckily, the syndrome decoder can be used in the quantum setting. The computation of the parity check amounts to a usual projective measurement of the parity of the involved qubits. For $s_{1}$ the measurement projectors are $\Pi=\mathbb{1}_{1} \otimes(|00\rangle\langle 00|+| 11\rangle\langle 11|)_{23}$ for $s_{1}=0$ and $\Pi^{\prime}=\mathbb{1}_{1} \otimes$ $(|01\rangle\langle 01|+| 10\rangle\langle 10|)_{23}$ for $s_{1}=1$. Here the subscripts on the identity operator $\mathbb{1}$ or parentheses denote which qubits the indicated operators act on. Note that $\Pi|\widehat{\psi}\rangle=|\widehat{\psi}\rangle$ and $\Pi^{\prime}|\widehat{\psi}\rangle=0$ for all $|\widehat{\psi}\rangle$ of the form defined above. The projection operators associated to $s_{2}$ are defined similarly.
+
+This measurement can be performed by the following circuit, also composed of ancilla qubits and CNOT gates. We use two ancillas, one for each of the corresponding syndromes $s_{1}$ and $s_{2}$. The CNOT gates essentially write the value of the control qubit onto the ancilla, and so each ancilla accumulates one of the syndrome parities. 

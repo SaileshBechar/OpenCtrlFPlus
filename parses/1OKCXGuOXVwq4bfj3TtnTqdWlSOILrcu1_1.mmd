@@ -1,0 +1,33 @@
+Essential features of quantum error correction
+
+\title{
+1.1 Overview
+}
+
+The topic of this course is quantum error correction: what is it, how do we analyze it, and how can we use it to build quantum computers? It is not strictly necessary to have already taken the QIT or QIP courses to follow this one, but some of the techniques used in those courses will be helpful here.
+
+What will you learn in this course?
+
+1. Stabilizer formalism
+
+It is usually too cumbersome to describe the error-correction process in terms of the wavefunction or density operator of the quantum state. The stabilizer formalism offers a much simpler and computationally efficient representation for a lot of situations of interest, not just error correction.
+
+2. State of the art codes and decoders
+
+Formalism and properties of codes, how to construct decoding algorithms using a variety of methods such as tensor networks, pair matching, belief propagation, etc.
+
+3. Fault tolerance
+
+How codes can be used to build quantum computers. Chiefly: how to correct errors with mechanisms which are themselves noisy.
+
+\subsection{But quantum error correction is impossible!}
+
+In the early days of quantum information theory, it was thought that quantum error correction is impossible. The goal of the first lecture is to sketch Shor's ${ }^{1}$ original construction of a quantum error correcting code and show how it avoids this conclusion.
+
+There were two main arguments to the impossibility claim.
+
+1. No cloning. The simplest method of classical error correction is to simply repeat the message. However, in the quantum setting this method would require the ability to copy an arbitrary quantum state, in violation of the no-cloning theorem.
+
+2. Finite precision control. Quantum information appears to be analog information, not digital, in that specifying a qubit state $|\psi\rangle$ requires specifying two real numbers in the representation $|\psi\rangle=\alpha|0\rangle+\beta|1\rangle$ (where $\alpha, \beta \in \mathbb{C}$ subject to $|\alpha|^{2}+|\beta|^{2}=1$ and the overall phase of the state is irrelevant). If the analog properties of the information carriers are truly vital for the computation to work, then it would appear to be necessary to perform error correction to arbitrary precision. But this is not going to be possible with only finite precision control. For instance, how can we possibly correct arbitrarily tiny rotations with relatively crude qubit control? If on the other hand, we only need to keep the information from being disturbed by errors above a fixed finite precision, then we have effectively digitized the problem. Then error correction with finite precision control might be possible, if it weren't for the noncloning objection above.
+
+${ }^{1}$ Peter Shor 

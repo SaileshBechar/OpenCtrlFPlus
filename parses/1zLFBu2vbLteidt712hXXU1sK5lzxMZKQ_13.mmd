@@ -1,0 +1,52 @@
+The only free parameter of the model is the geometrical factor $\alpha$ which takes the value of 1 in a special case of isotropic compression in three dimensions, $1 / 3$ for a perfect one-dimensional compression, and zero in the incompressible limit.
+
+The kinetic energy supplied to the system at large scales is being transferred through the hierarchy by nonlinear interactions. Lighthill (1955) pointed out that, in a compressible fluid, the mean volume energy transfer rate $\rho u^{2} u / l$ is constant in a statistical steady state, so that
+
+$$u \sim(l / \rho)^{1 / 3}$$
+
+From these two equations, assuming mass conservation, Fleck (1996) derived a set of scaling relations for the velocity, specific kinetic energy, density, and mass: ${ }^{9}$
+
+$$\begin{gathered}
+u \sim l^{1 / 3+\alpha}, \\
+\mathcal{E}(k) \sim k^{-\beta} \sim k^{-5 / 3-2 \alpha}, \\
+\rho \sim l^{-3 \alpha}, \\
+M(l) \sim l^{D_{m}} \sim l^{3-3 \alpha},
+\end{gathered}$$
+
+where all the exponents depend on the compression measure $\alpha$. The compression measure, in turn, is a function of the rms Mach number of the turbulent flow. In the incompressible limit, $\mathcal{M} \rightarrow 0$ and $\alpha \rightarrow 0$. There are also scaling relations for $v \equiv \rho^{1 / 3} u$ that follow directly from equation (32) and extend the incompressible K41 velocity scaling into the compressible regime, ${ }^{10}$
+
+$$v^{p}=\left(\rho^{1 / 3} u\right)^{p} \sim l^{p / 3} .$$
+
+These hint at a unique generalization of the velocity structure functions for compressible flows,
+
+$$\mathcal{S}_{p}(l) \equiv\left\langle|\boldsymbol{v}(\boldsymbol{r}+l)-\boldsymbol{v}(\boldsymbol{r})|^{p}\right\rangle \sim l^{p / 3},$$
+
+with $\mathcal{S}_{3} \sim l$ (see also the discussion in $\S 3.4$ ). The scaling laws expressed by equation (38) should not necessarily be exact and, as the incompressible K41 scaling, may require "intermittency corrections" that will be addressed in detail elsewhere. Our discussion here is limited to low-order statistics $(p \leq 3)$ for which the "corrections" are supposedly small. The compression measure $\alpha$ could also depend on the order $p$ in addition to its Mach number dependency. However, as we show below, a linear approximation $\alpha=$ const built into this simple cascade model may prove reasonable for the low-order density and velocity statistics.
+
+Before turning to properties of the density-weighted velocities $\boldsymbol{v}$, let us first assess the predictive power of Fleck's model using the statistics we already derived. Since from the simulations we know the scaling of the first-order velocity structure functions, we can get an estimate of the geometric factor $\alpha$ for the Mach 6 flow using equation (33). Assuming the inertial range scaling, $S_{1} \sim l^{0.54}$, we get $\alpha \approx 0.21$ and $D_{m} \approx 2.38$ from equation (36). This is consistent with our direct measurement of the mass dimension, $D_{m} \approx 2.4$, for the same range of scales.
+
+We can also do a consistency check based on the second-order statistics. From the inertial range scaling of the second-order
+
+9 Similar ideas were discussed earlier by Biglari \& Diamond $(1988,1989)$ in a slightly different context of self-gravitating compressible fluids.
+
+10 Note that Kolmogorov (1941a, 1941b) and Obukhov (1941) only considered $p \leq 3$ and never went as far as to consider $p>3$ (cf. Frisch 1995).
+
+![](https://cdn.mathpix.com/cropped/2023_03_07_62f7bb036f474ddbef38g-13.jpg?height=610&width=885&top_left_y=220&top_left_x=1093)
+
+Fig. 19. - Time-averaged power spectrum of the density-weighted velocity $\boldsymbol{v} \equiv \rho^{1 / 3} \boldsymbol{u}$ compensated by $k^{5 / 3}$. The straight lines represent the least-squares fits to the data for $\log k / k_{\min } \in[0.5,1.1]$ and $\log k / k_{\min } \in[1.2,1.8]$. The inertial subrange slope is in excellent agreement with the model prediction. [See the electronic edition of the Journal for a color version of this figure.]
+
+structure functions, we get $\mathcal{E}(k) \sim k^{-1.97}$ and therefore $\alpha=0.15$. This value corresponds to the fractal dimension $D_{m} \approx 2.55$ that is higher, but still reasonably close to our direct estimate. The discrepancy can in part be attributed to a deficiency of Fleck's model that asymptotically approaches the space-filling K41 cascade in the limit of weak compressibility $(\alpha \rightarrow 0)$ and thus does not take the full account of the intermittency of the velocity field.
+
+It is interesting to compare the interface dimension $D_{i}$ introduced by Meneveau \& Sreenivasan (1990) for intermittent incompressible turbulence based on the so-called Reynolds number similarity
+
+$$D_{i}=2+\zeta_{1},$$
+
+where $\zeta_{1}$ as before is the exponent of the first-order velocity structure function, with the mass dimension $D_{m}=3-3 \alpha$. Since both quantities characterize the same intermittent structures, they may well refer to the same fractal object in our compressible case. If one assumes $D_{i}=D_{m}=D$, keeping in mind that $\zeta_{1}=1 / 3+\alpha$ as follows from equation (33), it is easy to compute the compression parameter $\alpha=1 / 6 \approx 0.16(6)$ as well as the fractal dimension, $D=2.5$, that appear to be in accord with the original proposal by Fleck (1996) and with the numbers listed above.
+
+Finally, we can use the scaling exponents of the velocity power spectrum $\mathcal{E}(k) \sim k^{-1.97}$ and of the kinetic energy spec$\operatorname{trum} E(k) \sim k^{-1.52}$ to find $\alpha$ from the density scaling from equation (35). We get
+
+$$\rho \sim \frac{E(k)}{\mathcal{E}(k)} \sim k^{0.45} \sim l^{-3 \alpha},$$
+
+and thus, $\alpha=0.15$, consistent with the previous estimate based on the second-order statistics. Overall, within the uncertainties, Fleck's model appears to successfully reproduce the low-order velocity and density statistics from our numerical simulations and supports our direct measurement of the mass dimension $D_{m}$ as well.
+
+Let us now check how well equation (37) is satisfied in our simulations by computing the power spectrum $\Sigma(k)$ of the density-weighted velocity $\boldsymbol{v}$ as a $p=2$ diagnostic. We define $\Sigma(k)$ in exactly the same way as $\mathcal{E}(k)$ was defined in $\S 3.3$, but substitute $\boldsymbol{v}$ in place of the velocity $\boldsymbol{u}$. As can be seen from Figure 19, 

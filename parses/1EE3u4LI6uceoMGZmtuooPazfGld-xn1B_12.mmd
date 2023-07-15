@@ -1,0 +1,39 @@
+particular, Braun et al. (2014) examined a star formation prescription based on the model of Padoan \& Nordlund (2011) coupled with an SGS turbulence model in isolated disk simulations. Their subgrid model also included a prescription for multiphase ISM (Braun \& Schmidt 2012), and turbulent velocities were rescaled to the scale of cold self-gravitating clumps within this subgrid medium. Our disk models and star formation implementations are sufficiently different, which complicates a direct comparison of our results. We only note that although Braun et al. (2014) also found gas depletion time variation across the galaxy, in their case this variation was mostly due to the variation of $f_{\mathrm{H}_{2}}$, as the SF prescription based on the Padoan \& Nordlund (2011) results predicted $\epsilon_{\mathrm{ff}} \sim 10 \%$ in their star-forming regions with only small scatter. The variation of the depletion time in our simulations is due to the wide variation of local $\epsilon_{\mathrm{ff}}$, which, in turn, is caused by the scatter in the virial parameter $\alpha_{\mathrm{vir}}$ that is dominated by the variation of turbulent velocities.
+
+This origin of variation of SFE and gas depletion in our model is more in line with the models studied more recently by Braun \& Schmidt (2015). These authors used a series of disk simulations similar to those in Braun et al. (2014), but examined several star formation prescriptions based on the local turbulent properties predicted by the SGS model, including the model of Padoan et al. (2012; the "PHN" model), which we use in our work.
+
+Although the overall level of turbulence predicted by the SGS model in their disk is in qualitative agreement with our results, Braun \& Schmidt (2015) found that the PHN model predicts values of SFE that are systematically too low: $\epsilon_{\mathrm{ff}} \lesssim$ $0.1 \%$. According to Equation (3), such low $\epsilon_{\mathrm{ff}}$ should arise in regions with $\alpha_{\text {vir }} \gtrsim 20$, which is significantly larger than the values estimated for the observed GMCs (e.g., Bolatto et al. 2008; Dobbs et al. 2011). We believe that the origin of this discrepancy is in the subgrid model of multiphase gas distribution used by Braun \& Schmidt (2015). In this model, the size of cold clouds is set by the condition of $\alpha_{\mathrm{vir}}=1$, but at the same time, turbulent velocities are rescaled from the cell size to the cloud size assuming a turbulent cascade scaling, which results in $\alpha_{\mathrm{vir}} \geq 20$. This indicates that their model is not internally consistent.
+
+Regardless of the difference in actual values of $\epsilon_{\mathrm{ff}}$, the results of Braun \& Schmidt (2015) are qualitatively consistent with our main finding that turbulence-based star formation prescription predicts a wide variation of $\epsilon_{\mathrm{ff}}$.
+
+\section{SUMMARY AND CONCLUSIONS}
+
+In this paper we have presented a star formation prescription, in which local SFE is a function of local gas density and turbulent velocity dispersion, as predicted by direct simulations of star formation in turbulent molecular clouds. We have tested the model using simulations of an isolated Milky-Way-sized disk galaxy that included a self-consistent treatment of turbulence on unresolved scales. Our main results and conclusions can be summarized as follows.
+
+1. We find that in our simulations the shear-improved subgrid turbulence model of Schmidt et al. (2014) predicts turbulent rms velocities on the resolution scale of our simulations $(40 \mathrm{pc})$, consistent with the observed velocity dispersions in Milky Way GMCs and nearby galaxies. 2. The level of turbulence in dense, star-forming gas is largely determined by the enhancement of weak turbulence in warm diffuse gas by compression in spiral density waves. As a result, the turbulent velocities in the cold gas correlate with the local compression rate. Turbulence in the warm gas in between spiral arms, on the other hand, is maintained in equilibrium between the cascade from the resolved scales, sourcing by $\mathrm{SNe}$ and viscous dissipation into heat.
+
+3. The star formation model, in which efficiency scales exponentially with the ratio of local free-fall and turbulent crossing time, as found in the GMC simulations of Padoan et al. (2012), predicts a wide variation of SFE, from $\epsilon_{\mathrm{ff}} \lesssim 0.1 \%$ to $\sim 10 \%$, and local gas depletion time, from $t_{\mathrm{dep}} \sim 100 \mathrm{Myr}$ to $t_{\mathrm{dep}}>3 \mathrm{Gyr}$.
+
+4. We find that the predicted distribution of $\epsilon_{\mathrm{ff}}$ does average to the observed global depletion time $t_{\mathrm{dep}} \sim 1 \mathrm{Gyr}$, typical for Milky-Way-sized galaxies. Moreover, the resulting distribution of SFRs in individual star-forming regions broadly agrees with observations of star formation in the Milky Way and nearby galaxies. This agreement is achieved without any tuning of our star formation model parameters.
+
+5. In addition, our $\mathrm{SF}$ prescription naturally predicts a physical threshold for star formation at the density at which the thermal pressure of warm diffuse gas starts to dominate over turbulent pressure. This threshold density is expected to vary with the gas metallicity in a manner similar to the molecular fraction, although it does not depend on the molecular gas physics explicitly.
+
+All in all, we conclude that the presented implementation of star formation based on turbulence produces realistic star formation efficiencies and rates when applied in a galaxy-scale simulation. The lack of free parameters and the fact that this prescription relies on direct GMC-scale simulations put star formation modeling within this framework on a much firmer footing compared to standard recipes. This makes the described SF prescription promising for use in cosmological galaxy formation simulations, which we will pursue and present in a subsequent study.
+
+We are deeply grateful to Alexei Kritsuk for valuable discussions and for providing us with the initial conditions for developed turbulence, which were used for testing our SGS turbulence model. This work was supported by a NASA ATP grant NNH12ZDA001N, by NSF grant AST-1412107, and by the Kavli Institute for Cosmological Physics at the University of Chicago through grant PHY-1125897 and an endowment from the Kavli Foundation and its founder Fred Kavli. The simulations presented in this paper have been carried out using the Midway cluster at the University of Chicago Research Computing Center, which we acknowledge for support.
+
+\section{REFERENCES}
+
+Agertz, O., \& Kravtsov, A. V. 2015, ApJ, 804, 18
+
+Agertz, O., Kravtsov, A. V., Leitner, S. N., \& Gnedin, N. Y. 2013, ApJ, 770,25
+
+Agertz, O., Lake, G., Teyssier, R., et al. 2009a, MNRAS, 392, 294
+
+Agertz, O., Teyssier, R., \& Moore, B. 2009b, MNRAS, 397, L64
+
+Bertoldi, F., \& McKee, C. F. 1992, ApJ, 395, 140
+
+Bigiel, F., Leroy, A., Walter, F., et al. 2008, AJ, 136, 2846
+
+Bolatto, A. D., Leroy, A. K., Jameson, K., et al. 2011, ApJ, 741, 12 

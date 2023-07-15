@@ -1,0 +1,37 @@
+predicted by K41 in the incompressible limit. Our measurements for the three low-order exponents roughly agree with the estimates $\zeta_{1}^{\perp} \approx 0.5, \zeta_{2}^{\perp} \approx 0.9$, and $\zeta_{3}^{\perp} \approx 1.3$ obtained by Boldyrev et al. (2002) from numerical simulations of isothermal Mach $10 \mathrm{MHD}$ turbulence at a resolution of $500^{3}$ points. A rigorous result $\zeta_{3}=1$ holds for incompressible Navier-Stokes turbulence (Kolmogorov 1941c; "4/5" law) and for incompressible MHD (Politano \& Pouquet 1998). Strictly speaking, $\zeta_{3}=1$ is proved only for the longitudinal structure function $S_{3}^{\|}$(Kolmogorov 1941c) and for certain mixed structure functions (Politano \& Pouquet 1998), and in both cases the absolute value of the velocity difference is not taken (cf. eq. [21]), but still we know from numerical simulations that $\zeta_{3} \approx 1$ in a compressible transonic regime for the absolute velocity differences, as in equation (21) (Porter et al. 2002).
+
+The fact that in supersonic turbulence $\zeta_{3} \neq 1$ should be accounted for in extensions of incompressible turbulence models into the strongly compressible regime. One approach is to consider relative (to the third order) scaling exponents as more universal (Dubrulle 1994) and reformulate the models in terms of the relative exponents (cf. Boldyrev 2002; Boldyrev et al. 2002). In many low-resolution simulations, exploiting the so-called extended self-similarity hypothesis (Benzi et al. 1993, 1996), the foundations of which are not yet fully understood (see, e.g., Sreenivasan \& Bershadskii 2005), is the only resort to at least measure the relative exponents. Another approach is to consider statistics of mixed quantities, like $\rho^{\eta} \boldsymbol{u}$, in place of pure velocity statistics naively inherited from incompressible regime studies. We shall discuss the options for the former approach below and then return to the latter in $\S \S 3.5$ and 3.9.
+
+The relative scaling exponents $Z_{p} \equiv \zeta_{p} / \zeta_{3}$ of the first and the second order we obtain from our simulations are still somewhat higher than their incompressible nonintermittent analogs $1 / 3$ and $2 / 3 ; Z_{1}^{\|}=0.42, Z_{1}^{\perp}=0.43$, and $Z_{2}^{\|} \approx Z_{2}^{\perp}=0.76$. This situation is similar to a small discrepancy between the K41 predictions and experimental measurements that stimulated Obukhov (1962) and Kolmogorov (1962) to supplement the K41 theory by "intermittency corrections." If we follow a similar path in our strongly compressible case and estimate the "corrected" exponents using the Boldyrev et al. (2002) formula, which is similar to the She \& Leveque (1994) model, but assumes that the most singular dissipative structures are not one-dimensional vortex filaments but rather two-dimensional shock fronts,
+
+$$Z_{p}=\frac{p}{9}+1-\left(\frac{1}{3}\right)^{p / 3}$$
+
+we get the exponents $Z_{1}=0.42$ and $Z_{2}=0.74$ that are very close to our estimates. One can argue though that at high Mach numbers, the dilatational velocities constitute a substantial part of the total specific kinetic energy, and therefore, a double set of singular velocity structures and their associated dynamics would lead to a compound Poisson statistic instead of a single Poisson process incorporated in equation (25) (see She \& Waymire 1995). To check whether this is indeed true or not, one needs to collect information about higher order statistics from simulations at resolution better than $1024^{3}$.
+
+\subsection{Kinetic Energy Spectrum}
+
+To explore the second option outlined in $\S 3.4$, we considered the energy-spectrum function $E(k)$ built on $\boldsymbol{w} \equiv \sqrt{\rho} \boldsymbol{u}$ (e.g.,, Lele 1994) in addition to $\mathcal{E}(k)$ that depends solely on the velocity $\boldsymbol{u}$ and is traditionally used for characterizing incompressible tur-
+
+![](https://cdn.mathpix.com/cropped/2023_03_07_1bb8a139b0c0e77567abg-08.jpg?height=612&width=865&top_left_y=216&top_left_x=1117)
+
+FIg. 13.-Time-average total kinetic energy spectrum $E(k)$ and solenoidal kinetic energy spectrum $E_{S}(k)$, both compensated by $k^{3 / 2}$. The straight lines represent the least-squares fits to the data for $\log k / k_{\min } \in[0.5,1.2]$ and $\log k / k_{\min } \in$ $[1.2,1.8]$. The inertial range slopes of the total and the solenoidal kinetic energy spectrum are the same within the statistical errors, which is not the case for the velocity power spectra. The dilatational component (not shown) also has the same slope. [See the electronic edition of the Journal for a color version of this figure.]
+
+bulence. We defined the kinetic energy spectral density $E(\boldsymbol{k})$ as the square of the Fourier coefficient
+
+$$E(\boldsymbol{k}) \equiv \frac{1}{2}|\tilde{\boldsymbol{w}}(\boldsymbol{k})|^{2}$$
+
+determined by the Fourier transform
+
+$$\tilde{\boldsymbol{w}}(\boldsymbol{k})=\frac{1}{(2 \pi)^{3}} \int_{\mathcal{V}} \boldsymbol{w}(\boldsymbol{x}) e^{-2 \pi i \boldsymbol{k} \cdot x} d \boldsymbol{x}$$
+
+Then we used the standard definition of the three-dimensional kinetic energy spectrum function
+
+$$E(k) \equiv \int_{\tilde{\mathcal{V}}} E(\boldsymbol{k}) \delta(|\boldsymbol{k}|-k) d \boldsymbol{k}$$
+
+where $\delta(k)$ as before is the $\delta$-function. To avoid a possible terminological confusion, in the following we always refer to $\mathcal{E}(k)$ as the velocity power spectrum and to $E(k)$ as the kinetic energy spectrum
+
+$$E \equiv \int E(k) d k=\frac{1}{2}\left\langle\rho \boldsymbol{u}^{2}\right\rangle .$$
+
+At low Mach numbers, the scaling exponents of $E(k)$ and $\mathcal{E}(k)$ are nearly the same. However, while $\mathcal{E}(k)$ does not change much as the Mach number approaches unity (e.g., Porter et al. 2002), the slope of $E(k)$ gets shallower already by $\mathcal{M}=0.9$ (Kida \& Orszag 1992; based on simulations with $64^{3}$ collocation points). Since at low Mach numbers the spectra are dominated by the solenoidal components and the solenoidal velocity power spectrum hardly depends on the Mach number, the departure of the slope of $E(k)$ from the slope of $\mathcal{E}(k)$ is mostly due to the sensitivity of the solenoidal part of the kinetic energy spectrum to the density-vorticity correlation that is felt already around $\mathcal{M} \sim 0.5$. Shallow slopes for $E(k)$ with power indices around $-3 / 2$ were also detected in MHD simulations of highly supersonic super-AlfvAnic turbulence (Li et al. 2004; $512^{3}$ grid points).
+
+In the inertial range, the time-averaged kinetic energy spectrum scales as $E(k) \sim k^{-\beta}$ with $\beta=1.52 \pm 0.01$ (see Fig. 13). 

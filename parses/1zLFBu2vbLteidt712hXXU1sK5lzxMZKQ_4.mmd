@@ -1,0 +1,43 @@
+
+
+![](https://cdn.mathpix.com/cropped/2023_03_07_0790f37481c5dc832589g-04.jpg?height=634&width=882&top_left_y=216&top_left_x=152)
+
+FIG. 3.-Probability density function for the gas density and the best-fit lognormal approximation. Note the excellent fit quality over eight decades in the probability along the high-density wing of the PDF. The sample size is $2 \times 10^{11}$. [See the electronic edition of the Journal for a color version of this figure.]
+
+is the symmetric rate-of-strain tensor, and the integration is done over the volume of the domain $\mathcal{V}=1$. Using vector identities, $\boldsymbol{\Phi}$ can be rewritten through the vorticity $\boldsymbol{\omega}$ and the dilatation $\nabla \cdot \boldsymbol{u}$ as
+
+$$\Phi=-\frac{1}{\operatorname{Re}}\left(\nabla \times \omega-\frac{4}{3} \nabla \nabla \cdot u\right)$$
+
+and, by partial integration in equation (7),
+
+$$\epsilon=-\frac{1}{\operatorname{Re}}\left(\left\langle|\nabla \times \boldsymbol{u}|^{2}\right\rangle+\frac{4}{3}\left\langle|\nabla \cdot \boldsymbol{u}|^{2}\right\rangle\right)$$
+
+where the two terms on the right-hand side of equation (11) describe the mean dissipation rate due to solenoidal and dilatational velocities, respectively, $\epsilon=\epsilon_{S}+\epsilon_{D}$.
+
+In our Euler simulations, the role of viscous dissipation is played by the numerical diffusivity of PPM. This numerical dissipation does not necessarily have the same or similar functional form as the one used in the Navier-Stokes equations. It is still instructive, however, to get a flavor of the numerical dissipation rate by studying the properties of the vorticity and dilatation. The so-called small-scale compressive ratio (Kida \& Orszag 1990, $1992)$
+
+$$r_{\mathrm{cs}} \equiv \frac{\left\langle|\nabla \cdot \boldsymbol{u}|^{2}\right\rangle}{\left\langle|\nabla \cdot \boldsymbol{u}|^{2}\right\rangle+\left\langle|\nabla \times \boldsymbol{u}|^{2}\right\rangle}$$
+
+represents the relative importance of the dilatational component at small scales. The time-average $\bar{r}_{\mathrm{cs}} \approx 0.28$. The mean fraction of the dissipation rate that depends solely on the solenoidal velocity component $\epsilon_{S} / \epsilon \approx 0.65$. Even though the two-dimensional shock fronts are dominating the geometry of the density distribution in the dissipation range (see $\S 3.8$ ), the dissipation rate itself is dominated by the solenoidal velocity component that tracks corrugated shocks due to vortex stretching in the associated strong shear flows.
+
+![](https://cdn.mathpix.com/cropped/2023_03_07_0790f37481c5dc832589g-04.jpg?height=634&width=865&top_left_y=213&top_left_x=1117)
+
+FIG. 4.-Two-dimensional probability density function for the gas density and Mach number. The data here are based on a subvolume of $700 \times 500 \times$ $250 \approx 10^{8}$ points from a representative snapshot at $t=7 t_{d}$ that we will also use later in Figs. 14 and 17. The contours show the probability density levels separated by factors of 2 . [See the electronic edition of the Journal for a color version of this figure.]
+
+\subsection{Density PDF}
+
+In isothermal turbulence the gas density does not correlate with the local Mach number. As a result, the density PDF follows a lognormal distribution (Vazquez-Semadeni 1994; Padoan et al. 1997; Passot \& Vazquez-Semadeni 1998; Nordlund \& Padoan 1999). Figure 3 shows our results for the time-average density PDF and its best-fit lognormal representation
+
+$$p(\ln \rho) d \ln \rho=\frac{1}{\sqrt{2 \pi \sigma^{2}}} \exp \left[-\frac{1}{2}\left(\frac{\ln \rho-\overline{\ln \rho}}{\sigma}\right)^{2}\right] d \ln \rho,$$
+
+where the mean of the logarithm of the density, $\overline{\ln \rho}$, is determined by
+
+$$\overline{\ln \rho}=-\sigma^{2} / 2$$
+
+The lack of a Mach number-density correlation is illustrated in Figure 4 where we show the two-dimensional PDF for the density and Mach number. The density distribution is very broad due to the very high degree of compressibility under isothermal supersonic conditions. The density contrast $\sim 10^{6}$ is orders of magnitude higher than in the transonic case at $\gamma=1.4$ studied by Porter et al. (2002). Note the excellent quality of the lognormal fit in Figure 3, particularly at high densities, over more than eight decades in the probability and a very low noise level in the data.
+
+If we express the standard deviation $\sigma$ as a function of Mach number $\mathcal{M}$ as
+
+$$\sigma^{2}=\ln \left(1+b^{2} \mathcal{M}^{2}\right)$$
+
+we get the best-fit value of $b \approx 0.260 \pm 0.001$ for $\log _{10} \rho \in$ $[-2,2]$, which is smaller than the $b \approx 0.5$ determined in Padoan et al. (1997) for supersonic MHD turbulence. The powerful intermittent bursts in $\rho_{\max }(t)$ (see Fig. 3) correspond to large departures from the time-average PDF caused by head-on collisions of strong shocks. These events are usually followed by strong 

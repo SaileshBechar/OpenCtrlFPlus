@@ -1,0 +1,43 @@
+
+
+![](https://cdn.mathpix.com/cropped/2023_03_07_3d4e1e68a41cf6eb7af7g-05.jpg?height=588&width=885&top_left_y=220&top_left_x=129)
+
+FiG. 5.-Time-averaged velocity power spectra as a function of PPM diffusion coefficient $K=0.0,0.1$, and 0.2 at resolution of $512^{3}$ grid points. The straight lines show the best linear fits to the spectra obtained for $\log k / k_{\min } \in[0.6,1.3]$. The inertial range is barely resolved, since the driving scale overlaps with the bottleneckcontaminated interval. The slope of the "flat" part of the spectrum is mainly controlled by numerical diffusion. [See the electronic edition of the Journal for a color version of this figure.]
+
+rarefactions that are seen as large oscillations in the low-density wing of the PDF and also in the density power spectrum. Intermittency is apparently very strong in supersonic turbulence.
+
+\subsection{Velocity Power Spectra, Bottleneck Phenomenon, Numerical Dissipation, and Convergence}
+
+We define the velocity power spectrum $\mathcal{E}(\boldsymbol{k})$ (or the specific kinetic energy spectral density) in terms of the Fourier transform of the velocity $\boldsymbol{u}$,
+
+$$\tilde{\boldsymbol{u}}(\boldsymbol{k})=\frac{1}{(2 \pi)^{3}} \int_{\mathcal{V}} \boldsymbol{u}(\boldsymbol{x}) e^{-2 \pi i \boldsymbol{k} \cdot x} d \boldsymbol{x}$$
+
+as the square of the Fourier coefficient
+
+$$\mathcal{E}(\boldsymbol{k}) \equiv \frac{1}{2}|\tilde{\boldsymbol{u}}(\boldsymbol{k})|^{2}$$
+
+and then we define the three-dimensional velocity power spectrum as
+
+$$\mathcal{E}(k) \equiv \int_{\tilde{\mathcal{V}}} \mathcal{E}(\boldsymbol{k}) \delta(|\boldsymbol{k}|-k) d \boldsymbol{k}$$
+
+where $\delta(k)$ is the Dirac $\delta$-function. The integration of the velocity power spectrum gives the specific kinetic energy (cf. eq. [3]),
+
+$$\mathcal{E} \equiv \int \mathcal{E}(k) d k=\frac{1}{2}\left\langle\boldsymbol{u}^{2}\right\rangle$$
+
+Our main focus in this section is on the self-similar scaling of the power spectrum in the inertial range
+
+$$\mathcal{E}(k) \sim k^{-\beta}$$
+
+that is limited by the kinetic energy input from the random force on large scales $\left(k / k_{\min }<2\right)$ and by the spectrum flattening in
+
+![](https://cdn.mathpix.com/cropped/2023_03_07_3d4e1e68a41cf6eb7af7g-05.jpg?height=618&width=885&top_left_y=216&top_left_x=1093)
+
+FIG. 6.-Compensated velocity power spectra from uniform grid PPM simulations at resolutions $256^{3}, 512^{3}, 1024^{3}$, and from AMR simulation with effective resolution of $2048^{3}$ grid points. The wavenumbers are normalized to match $k / k_{\min }$ of the $1024^{3}$ simulations at the Nyquist frequency. The diffusion coefficient $K=0$ for the uniform grid simulations, and $K=0.1$ for the AMR simulation. All power spectra are time-averaged over $t \in[6,10] t_{d}$ with the exception of the AMR one that is taken at $t=7.2 t_{d}$. The spectra demonstrate convergence for the inertial range of scales. [See the electronic edition of the Journal for a color version of this figure.]
+
+the near-dissipation part of the inertial range due to the so-called bottleneck effect related to a three-dimensional nonlocal mechanism of energy transfer between modes of differing length scales (Falkovich 1994).
+
+The bottleneck phenomenon has been observed both experimentally and in numerical simulations (e.g., Porter et al. 1994; Kaneda et al. 2003; Dobler et al. 2003; Haugen \& Brandenburg 2004). The strength of the bottleneck depends on the way the dissipation scales with the wavenumber, and the effect is more pronounced when the dissipation grows faster than $\sim k^{2}$ (Falkovich 1994). When we numerically integrate the Euler equations using PPM, the dissipation is solely determined by the method and affects scales smaller than $32 \Delta$ (Porter \& Woodward 1994). According to Porter et al. (1992a), the effective numerical viscosity of PPM has a wavenumber dependency intermediate between $\sim k^{4}$ and $\sim k^{5}$. The high-order basic reconstruction scheme of PPM is designed to improve resolution in shocks and contact discontinuities, and therefore, numerical diffusion is controlled by various switches and is nonuniform in space.
+
+An addition of small diffusive flux near shocks ${ }^{5}$ changes the scaling properties of numerical dissipation and reduces the flattening of the spectrum due to the bottleneck phenomenon. When the grid is not large enough to resolve the basic flow, the bottleneck bump in the spectrum is smeared and can be easily misinterpreted as a shallower spectrum. Figure 5 shows how the slope of the "flat" section in the velocity power spectrum at $512^{3}$ depends on the value of the diffusion coefficient $K$. The inertial range is unresolved in all three cases shown. The measured slope $\beta(K)$ changes from $1.91 \pm 0.01$ to $1.80 \pm 0.01$ as the diffusion coefficient decreases from 0.2 to zero and the bottleneck bump gets stronger. While the statistical uncertainty of estimated power indices based on the fitting procedure is rather small, the variation of $\beta$ as a function of the diffusion coefficient is substantial and accounts for $\sim 33 \%$ of the difference between Burgers and
+
+5 This is controlled by the parameter $K$ in eq. (4.5) in Colella \& Woodward $(1984)$ 

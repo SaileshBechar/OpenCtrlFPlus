@@ -1,0 +1,25 @@
+state $|\psi\rangle$. Second, the decoding procedure does not damage the analog nature (superposition) of the quantum information. Third, the decoding procedure does digitize all errors which are superpositions of $\mathbb{1}$ and $\sigma_{x}$ to a probabilistic mixture of either $\mathbb{1}$ or $\sigma_{x}$. The drawback is that the code only protects against single-qubit errors of the form $E=c_{1} \mathbb{1}+c_{2} \sigma_{x}$.
+
+\subsection{Repetition coding to correct phase errors}
+
+Of course, there is nothing special about $\sigma_{x}$ and the standard basis $|0\rangle /|1\rangle$. We could just rotate the entire error correction scheme so that it protects against $\sigma_{z}$ errors, or any errors along any axis. In particular, to correct single $\sigma_{z}$ errors, we just make use of the repetition code in the $| \pm\rangle=|0\rangle \pm|1\rangle$ basis (ignoring normalization). Now a state $|\psi\rangle=\alpha|+\rangle+\beta|-\rangle$ is encoded as $|\widehat{\psi}\rangle=\alpha|+++\rangle+\beta \mid-$ $--\rangle$. The syndrome measurement projectors become $\Pi=\mathbb{1}_{1} \otimes(|++\rangle\langle++|+|--\rangle\langle--|)_{23}$ for $s_{1}=0$ and $\Pi^{\prime}=\mathbb{1}_{1} \otimes(|+-\rangle\langle+-|+|-+\rangle\langle-+|)_{23}$ for $s_{1}=1$, and similarly for $s_{2}$. The decoding lookup table is the same, only now the correction operation is $\sigma_{z}$ on the indicated qubit. In this way the repetition code can correct single phase errors $\sigma_{z}$.
+
+Rotation of a qubit from the $\sigma_{z}$ eigenbasis to the $\sigma_{x}$ eigenbasis and vice versa is accomplished by the Hadamard gate, denoted $H$. It has the action $|x\rangle \mapsto|0\rangle+(-1)^{x}|1\rangle$ for $x \in\{0,1\}$. The circuit to encode a qubit into the phase repetition code is therefore
+
+![](https://cdn.mathpix.com/cropped/2023_04_20_83459d90c24ef4681ef6g-5.jpg?height=226&width=517&top_left_y=1269&top_left_x=724)
+
+And the decoding circuit is
+
+![](https://cdn.mathpix.com/cropped/2023_04_20_83459d90c24ef4681ef6g-5.jpg?height=385&width=734&top_left_y=1575&top_left_x=612)
+
+\subsection{The Shor code}
+
+\subsubsection{Concatenation}
+
+Shor's insight was to realize that concatenating the bit flip and phase flip repetition codes produces a code which can correct any single-qubit error. Concatenation refers to the procedure of building codewords not out of physical qubits directly, but out of the codewords of other codes. That is, instead of taking the phase flip repetition codewords to be products of the single qubit $| \pm\rangle$ states, we instead use the encoded $|\widehat{ \pm}\rangle$ states from the bit flip repetition code. The encoded $| \pm\rangle$ states of the Shor code, denoted by $|\widetilde{ \pm}\rangle$, are the following nine-qubit states:
+
+$$\begin{aligned}
+& |\widetilde{+}\rangle=|\widehat{+}\rangle|\widehat{+}\rangle|\widehat{+}\rangle=(|000\rangle+|111\rangle)(|000\rangle+|111\rangle)(|000\rangle+|111\rangle), \\
+& |\widetilde{\sim}\rangle=|\widehat{-}\rangle|\widehat{-}\rangle|\widehat{O}\rangle=(|000\rangle-|111\rangle)(|000\rangle-|111\rangle)(|000\rangle-|111\rangle) .
+\end{aligned}$$
+

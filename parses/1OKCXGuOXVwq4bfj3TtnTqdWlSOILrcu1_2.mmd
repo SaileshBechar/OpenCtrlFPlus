@@ -1,0 +1,26 @@
+We shall see that quantum information defies easy categorization, and while the information itself is sort of analog, the noise that affects the information is in some sense digital. Moreover, no-cloning is not actually an obstacle, and indeed quantum error correction is possible. Shor was confronted with these arguments after developing his famous factoring algorithm, causing him to consider them quite carefully. Luckily he discovered quantum error correction and thereby showed that the factoring result was a statement about physical devices, not only a mathematical statement.
+
+\subsection{Repetition coding}
+
+\subsubsection{Encoding}
+
+The simplest classical error correction method is based on repetition. Suppose we would like to transmit a single bit, 0 or 1 , from a sender to a receiver. However, the communication channel is noisy and occasionally flips the bit value. To transmit 0 using the repetition code, the sender transmits three zeros: 000; to transmit a 1 , three $1 \mathrm{~s}: 111$. The outputs of the encoder are called the codewords, and by design the encoder is deterministic, so that there is a 1-1 correspondence between input messages and codewords. The set of codewords is called the code. So in this case the code is $\{000,111\}$.
+
+\subsubsection{Majority vote decoding}
+
+Decoding is straightforward: The receiver decides which message was transmitted by taking the majority of the received bits. A single bit flip can now be detected and corrected. Two flips cause an error in the transmission, as do three. The three possible single-bit errors form the set of correctable errors.
+
+In the computational setting it is better to leave the information encoded in the code, rather than decoding it to a single bit (where it can be damaged by a single flip). The majority vote scheme is now employed by replacing each bit in the codeword by the majority of all the bits.
+
+\subsubsection{Syndrome decoding}
+
+It is not actually necessary to employ majority vote in order to decode the repetition code. Instead, we can use the face that it is a linear code and employ syndrome decoding. Trivially in this case, the sum of two codewords is also a codeword when addition is defined modulo 2, i.e. we work over the field $\mathbb{F}_{2}$. Observe that an arbitrary codeword $x$, whose individual bits we call $x_{1} x_{2} x_{3}$, satisfies the two parity checks $s_{1}:=x_{2}+x_{3}=0$ and $s_{2}:=x_{1}+x_{3}=0$. A pattern of bit flip errors $z \in \mathbb{F}_{2}^{3}$ acts on a codeword by addition, producing from $x$ the noisy codeword $y=x+z$. Computing the parity checks on $y$ now produces the syndromes $s_{1}=z_{2}+z_{3}$ and $s_{2}=z_{1}+z_{3}$. These syndromes allow the decoder to diagnose and correct the error. For example, if $z=100$, then $s_{1}=0$ and $s_{2}=1$. All the possibilities are given in the following table:
+
+\begin{tabular}{c|c} 
+syndrome $s_{1} s_{2}$ & error position \\
+\hline 00 & $\emptyset$ \\
+01 & 1 \\
+10 & 2 \\
+11 & 3
+\end{tabular}
+

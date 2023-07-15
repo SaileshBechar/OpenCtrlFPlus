@@ -1,0 +1,53 @@
+
+
+![](https://cdn.mathpix.com/cropped/2023_03_07_37825a524e2ce54ef8a1g-03.jpg?height=612&width=885&top_left_y=216&top_left_x=129)
+
+FIG. 1.-Time evolution of the rms Mach number in the $1024^{3}$ simulation of driven Mach 6 turbulence. [See the electronic edition of the Journal for a color version of this figure.]
+
+excess of 2. We also track shear layers using the Frobenius norm $\left\|\partial_{i} u_{j}\left(1-\delta_{i j}\right)\right\|_{\mathrm{F}}$ (see also Kritsuk et al. 2006). This second refinement criterion adds about $20 \%$ more flagged zones that would be left unrefined if only the refinement on shocks were used. The simulations were continued with AMR for only $1.2 t_{d}$, which allows enough time for relaxation of the flow at high resolution, but does not allow us to perform time-averaging over many statistically independent snapshots. Therefore, we use the data from AMR simulations mostly to compare the quality of instantaneous statistical quantities from simulations with adaptive and nonadaptive meshes.
+
+\subsection{Random Forcing}
+
+The initial velocity field is used, after an appropriate renormalization, as a steady random force (acceleration) to keep the total kinetic energy within the box on an approximately constant level during the simulations. The force we applied is isotropic in terms of the total specific kinetic energy per dimension, $\frac{u_{0, x}^{2}}{}=\overline{u_{0, y}^{2}}=\overline{u_{0, z}^{2}}$, but its solenoidal $\left(\nabla \cdot \boldsymbol{u}_{0, S} \equiv 0\right)$ and dilatational $\left(\nabla \times \boldsymbol{u}_{0, D} \equiv 0\right)$ components are anisotropic, since one of the three directions is dominated by the large-scale compressional modes, while the other two are mostly solenoidal. The distribution of the total specific kinetic energy
+
+$$\mathcal{E} \equiv \frac{1}{2} \int_{\mathcal{V}} u^{2} d V=\mathcal{E}_{S}+\mathcal{E}_{D}$$
+
+between the solenoidal $\mathcal{E}_{S}$ and dilatational $\mathcal{E}_{D}$ components is such that $\chi_{0} \equiv \mathcal{E}_{0, S} / \mathcal{E}_{0} \approx 0.6$. The forcing field is helical, but the mean helicity is very low, ${\overline{h_{0}}}^{2} \ll \bar{h}_{0}^{2}$, where the helicity $h$ is defined as
+
+$$h \equiv \boldsymbol{u} \cdot \nabla \times \boldsymbol{u}$$
+
+Note that in compressible flows with an isothermal equation of state the mean helicity is conserved, as in the incompressible case, since the Ertel's potential vorticity is identically zero (Gaffet 1985).
+
+\section{RESULTS}
+
+In this section we start with a general quantitative description of our simulated turbulent flows and then derive their time-average statistical properties. We end up with assembling the pieces of this
+
+![](https://cdn.mathpix.com/cropped/2023_03_07_37825a524e2ce54ef8a1g-03.jpg?height=612&width=863&top_left_y=216&top_left_x=1096)
+
+FIG. 2.-Same as Fig. 1, but for the maximum gas density. [See the electronic edition of the Journal for a color version of this figure.]
+
+statistical picture in a context of a simple cascade model that extends the Kolmogorov phenomenology of incompressible turbulence into the compressible regime.
+
+\subsection{Time-Evolution of Global Variables}
+
+The time variations of the rms Mach number and of the maximum gas density in the $1024^{3}$ simulation are shown in Figures 1 and 2 . The kinetic energy oscillates between 18 and 22, roughly following the Mach number evolution. Note the highly intermittent bursts of activity in the plot of $\rho_{\max }(t)$. The time-average enstrophy
+
+$$\Omega \equiv \frac{1}{2} \int_{\mathcal{V}}|\omega|^{2} d V \approx 10^{5}$$
+
+and the Taylor scale
+
+$$\lambda \equiv \sqrt{\frac{5 E}{\Omega}} \approx 0.03=30 \Delta,$$
+
+where $\Delta$ is the linear grid spacing and $\omega \equiv \nabla \times u$ is the vorticity. The rms helicity grows by a factor of 7.7 in the initial phase of the simulation and then remains roughly constant at a level of $1.2 \times 10^{3}$. While the conservation of the mean helicity is not built directly into the numerical method, it is still satisfied reasonably well. The value of $\bar{h}(t)$ is contained within $\pm 2 \%$ of its rms value during the whole simulation.
+
+If, instead of the Euler equations, we were to consider the Navier-Stokes equations with the explicit viscous terms, we could estimate the total viscous dissipation rate within the computational domain,
+
+$$\epsilon=\int_{\mathcal{V}} \Phi_{i} u_{i} d V$$
+
+where
+
+$$\begin{gathered}
+\Phi_{i} \equiv \frac{2}{\operatorname{Re}} \frac{\partial}{\partial x_{j}}\left(\mathrm{G}_{i j}-\frac{1}{3} \nabla \cdot \boldsymbol{u} \delta_{i j}\right), \\
+\mathrm{G}_{i j} \equiv \frac{1}{2}\left(\frac{\partial u_{i}}{\partial x_{j}}+\frac{\partial u_{j}}{\partial x_{i}}\right)
+\end{gathered}$$
+

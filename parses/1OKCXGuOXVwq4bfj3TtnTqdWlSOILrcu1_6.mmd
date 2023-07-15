@@ -1,0 +1,22 @@
+Put differently, the qubit is first encoded into the phase flip repetition code, and then each physical qubit is separately encoded in the bit flip repetition code. The encoding circuit looks like
+
+![](https://cdn.mathpix.com/cropped/2023_04_20_8c0de23585c8795d3f03g-6.jpg?height=628&width=714&top_left_y=511&top_left_x=728)
+
+\subsubsection{Correction}
+
+Suppose that the noise causes a Pauli operator $\sigma_{x}, \sigma_{y}$, or $\sigma_{z}$ to be applied to one of the qubits. The correction procedure for the Shor code deals with bit flips and phase flips separately; $\sigma_{y}$ is ultimately corrected because $\sigma_{y}=i \sigma_{x} \sigma_{z}$.
+
+Bit flips are corrected just as before, in each of the three blocks of three qubits. Syndrome measurements defined above are made in each block and the damaged qubit is identified and corrected. If the error were $\sigma_{x}$, the original encoded state would now be restored. If the error were $\sigma_{y}$, then the overall action on the code would be $\sigma_{x} \sigma_{y}=i \sigma_{z}$, so the $\sigma_{y}$ error is converted into a $\sigma_{z}$ error. If the error were $\sigma_{z}$, then this first stage of the decoding scheme does nothing, as $\sigma_{z}$ commutes with the syndrome measurement projectors.
+
+After the first stage, only a possible $\sigma_{z}$ error remains. Observe that the codewords are such that a $\sigma_{z}$ error acting on any position in a block is equivalent to it acting on the first position. That is, for example, $\left(\sigma_{z}\right)_{2}$ and $\left(\sigma_{z}\right)_{1}$ have the same effect on $|\widehat{ \pm}\rangle_{123}$. Namely, they both produce $|\widehat{\mp}\rangle_{123}$. Two errors that have the same effect on the codespace are said to be degenerate. Due to the degeneracy, we can assume that only the first qubit in any block could be affected by a phase flip.
+
+To correct phase flips, syndrome measurements for the phase repetition code are performed, but now on the encoded states of the bit flip code. That is, $s_{1}=0$ corresponds to the projector
+
+![](https://cdn.mathpix.com/cropped/2023_04_20_8c0de23585c8795d3f03g-6.jpg?height=60&width=1570&top_left_y=2003&top_left_x=297)
+
+![](https://cdn.mathpix.com/cropped/2023_04_20_8c0de23585c8795d3f03g-6.jpg?height=59&width=1570&top_left_y=2055&top_left_x=297)
+has the error. The error is then removed by applying $\sigma_{z}$ to qubit 1,4 , or 7 as appropriate. This restores the original codeword.
+
+\subsubsection{Digitization}
+
+The above argument shows that the Shor code can recover from any single-qubit Pauli operator. Just as the syndrome decoder measurements of the bit flip repetition code digitizes superpositions of $\mathbb{1}$ and $\sigma_{x}$, the syndrome decoder measurements of the Shor code will digitize any superposition of Pauli errors, any error of the form $E=c_{0} \mathbb{1}+c_{1} \sigma_{x}+c_{2} \sigma_{y}+c_{3} \sigma_{z}$ for $c_{i} \in \mathbb{C}$. Since every linear operator $E$ on qubits can be written in this way (the Pauli operators span the set of $2 x 2$ matrices when complex linear combinations are allowed), every single-qubit error can be corrected.

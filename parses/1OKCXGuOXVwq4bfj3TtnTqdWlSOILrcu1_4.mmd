@@ -1,0 +1,23 @@
+
+
+![](https://cdn.mathpix.com/cropped/2023_04_20_8d9dfbacacc946105445g-4.jpg?height=292&width=628&top_left_y=388&top_left_x=768)
+
+The boxes on the ancillas at the end of the circuit represent measurement -they depict little meters, such as an analog voltmeter. The fact that they have classical outputs is denoted by two lines, and the syndrome values $s_{1}$ and $s_{2}$ are indicated.
+
+The correction procedure is just as before. First the syndromes are determined by measurement of the appropriate qubits, then the error position is determined from the table, and finally the corresponding qubit is corrected by flipping it with a $\sigma_{x}$ operation. It can be seen by direct calculation that any single qubit bit flip error will be corrected, no matter the encoded state $|\widehat{\psi}\rangle$. For example, if the second qubit is flipped, then $|\widehat{\psi}\rangle$ becomes $\left|\widehat{\psi}^{\prime}\right\rangle=\alpha|010\rangle+\beta|101\rangle$. Measurement of $s_{1}$ will yield $s_{1}=1$, and the state $\left|\widehat{\psi}^{\prime}\right\rangle$ will be unchanged. Measurement of $s_{2}$ will yield $s_{2}=0$, again leaving the state unchanged. Finally, the correction procedure will indicate that qubit two should be flipped, which restores the original state $|\widehat{\psi}\rangle$. Thus, the syndrome decoding procedure is able to correct the error without destroying the superposition!
+
+\section{Digitization of errors}
+
+Consider rotation of qubit 1 around the $\widehat{x}$ axis by some angle $\theta \in \mathbb{R}$. The unitary operator which implements this rotation is simply $U=e^{-i \frac{\theta}{2} \sigma_{x}}=\cos \frac{\theta}{2} \mathbb{1}+\sin \frac{\theta}{2} \sigma_{x}$. What happens in the error correction procedure now is that the syndrome digitizes the error! The noisy codeword is given by
+
+$$\left|\widehat{\psi}^{\prime}\right\rangle=U|\widehat{\psi}\rangle=\cos \frac{\theta}{2}|\widehat{\psi}\rangle+\sin \frac{\theta}{2}\left(\sigma_{x}\right)_{1}|\widehat{\psi}\rangle$$
+
+Now observe that the syndrome measurement will break this superposition. For $s_{1}$, both terms will give $s_{1}=0$. However, for $s_{2}$ the first term will give $s_{2}=0$ and the second term will give $s_{2}=1$. The post-measurement states in these two cases will just be the corresponding terms in the superposition (appropriately renormalized).
+
+In the former case the syndrome correctly indicates that there is no error, so the decoder will take no action. In the latter case the syndrome correctly indicates that the error is on the first qubit, so the decoder will apply $\sigma_{1}$ to $\left(\sigma_{x}\right)_{1}|\widehat{\psi}\rangle$, which restores $|\widehat{\psi}\rangle$. Hence, in both cases the encoded state is correctly recovered. The angle of the rotation only determines the relative probability of the two different cases. For a small angle, the syndrome measurement will most often result in $s_{1} s_{2}=00$, while for a large angle it will often result in $s_{1} s_{2}=10$. In this way the analog rotation
+
+![](https://cdn.mathpix.com/cropped/2023_04_20_8d9dfbacacc946105445g-4.jpg?height=51&width=1419&top_left_y=2182&top_left_x=296)
+
+The coefficients of the two terms in (1.1) come from the unitary operation, but actually their particular form played no role in the argument. The syndrome decoding scheme can correct an arbitrary single-qubit error of the form $E=c_{1} \mathbb{1}+c_{2} \sigma_{x}$, where $c_{1}, c_{2} \in \mathbb{C}$. As before, the coefficients only determine the probabilities of the various syndrome measurement results. The trivial syndrome indicating no error will occur with probability $\left|c_{1}\right|^{2} /\left(\left|c_{1}\right|^{2}+\left|c_{2}\right|^{2}\right)$, while the nontrivial syndrome will occur with probability $\left|c_{2}\right|^{2} /\left(\left|c_{1}\right|^{2}+\left|c_{2}\right|^{2}\right)$.
+
+Syndrome decoding of the quantum repetition code shows how the original objections to the possibility of quantum error correction are overcome. First, it is not necessary to clone the qubit 

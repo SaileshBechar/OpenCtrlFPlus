@@ -1,0 +1,37 @@
+oauth_key.js
+.env.local
+__pycache__
+.vscode
+.flaskenv
+
+front-end/dist
+front-end/.solid
+front-end/.output
+front-end/.vercel
+front-end/.netlify
+front-end/netlify
+
+front-end/.env*
+keys.py
+
+pdf_images
+pdf_mmds
+sample_pdfs
+sb_markdowns
+
+# dependencies
+front-end/node_modules
+
+# IDEs and editors
+front-end/.idea
+front-end/.project
+front-end/.classpath
+front-end/*.launch
+front-end/.settings/
+
+# Temp
+front-end/gitignore
+
+# System Files
+front-end/.DS_Store
+front-end/Thumbs.db
