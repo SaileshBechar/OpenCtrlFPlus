@@ -2,8 +2,7 @@
 
 https://github.com/emcf/CtrlFplus/assets/38445041/e1eed1bb-9e22-4f4c-bc92-1fc9a4d2a946
 
-
-I just want to search pdfs
+Chat with Scientific Documents
 
 ## Flask API
 
