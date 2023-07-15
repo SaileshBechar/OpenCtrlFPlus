@@ -1,6 +1,14 @@
 # CtrlFplus
 
-https://github.com/emcf/CtrlFplus/assets/38445041/e1eed1bb-9e22-4f4c-bc92-1fc9a4d2a946
+https://github.com/SaileshBechar/OpenCtrlFPlus/assets/38445041/16560fd0-c56f-4d80-9076-60514cd74a49
+
+
+https://github.com/SaileshBechar/OpenCtrlFPlus/assets/38445041/eb70cd7a-b7ee-410c-bfef-b1f7205c34ff
+
+
+https://github.com/SaileshBechar/OpenCtrlFPlus/assets/38445041/b6d17771-4b60-49a5-a092-a9be3c222d9c
+
+
 
 Chat with Scientific Documents
 
